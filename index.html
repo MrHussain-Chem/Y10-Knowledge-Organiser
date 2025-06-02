@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y10 Chemistry Knowledge Organiser</title>
+    <style>
+        @media print {
+            body { margin: 0.5cm; }
+            .page-break { page-break-before: always; }
+            .no-break { page-break-inside: avoid; }
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 12px;
+            background-color: #f5f5f5;
+            font-size: 10px;
+            line-height: 1.25;
+        }
+        
+        .page {
+            background: white;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        
+        .section {
+            border: 2px solid #8B0000;
+            background: white;
+            margin-bottom: 10px;
+            padding: 0;
+        }
+        
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .header {
+            background: white;
+            border: 2px solid #8B0000;
+            padding: 8px 12px;
+            text-align: left;
+            margin-bottom: 12px;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .header h2 {
+            margin: 2px 0 0 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .section-title {
+            color: white;
+            padding: 6px 12px;
+            margin: 0;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        
+        .c6-title {
+            background: #2E7D32; /* Green for Rates */
+        }
+        
+        .c5-title {
+            background: #D32F2F; /* Red for Energy */
+        }
+        
+        .c7-title {
+            background: #1976D2; /* Blue for Equilibria */
+        }
+        
+        .c2-title {
+            background: #7B1FA2; /* Purple for Structure & Bonding */
+        }
+        
+        .c4-title {
+            background: #F57C00; /* Orange for Metals */
+        }
+        
+        .key-terms-title {
+            background: #5D4037; /* Brown for Key Terms */
+        }
+        
+        .calculations-title {
+            background: #455A64; /* Blue Grey for Calculations */
+        }
+        
+        .section-content {
+            padding: 10px 12px;
+        }
+        
+        .key-terms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+            font-size: 9px;
+        }
+        
+        .key-terms-table th {
+            background: #8B0000;
+            color: white;
+            padding: 5px 6px;
+            text-align: left;
+            font-weight: bold;
+            border: 1px solid #8B0000;
+        }
+        
+        .key-terms-table td {
+            border: 1px solid #ccc;
+            padding: 5px 6px;
+            vertical-align: top;
+        }
+        
+        .key-terms-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        ul {
+            margin: 0 0 8px 0;
+            padding-left: 16px;
+        }
+        
+        ul li {
+            margin-bottom: 2px;
+        }
+        
+        .formula {
+            font-family: monospace;
+            background: #f0f0f0;
+            padding: 1px 3px;
+            border-radius: 2px;
+            font-weight: bold;
+            font-size: 10px;
+        }
+        
+        .equation {
+            text-align: center;
+            font-family: monospace;
+            font-size: 11px;
+            background: #f0f0f0;
+            padding: 6px;
+            border-radius: 3px;
+            margin: 6px 0;
+            border: 1px solid #ddd;
+        }
+        
+        .reactivity-series {
+            background: #e8f4f8;
+            padding: 8px;
+            border-radius: 3px;
+            text-align: center;
+            margin: 6px 0;
+            border: 1px solid #ccc;
+            font-size: 9px;
+        }
+        
+        .energy-diagram {
+            background: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+            margin: 6px 0;
+            border-radius: 3px;
+            font-size: 9px;
+        }
+        
+        h4 {
+            margin: 10px 0 5px 0;
+            color: #8B0000;
+            font-size: 11px;
+            text-decoration: underline;
+        }
+        
+        .highlight {
+            background: #ffff99;
+            padding: 1px 2px;
+        }
+        
+        strong {
+            color: #8B0000;
+        }
+        
+        .factors-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            margin: 6px 0;
+        }
+        
+        .factor-box {
+            border: 1px solid #666;
+            padding: 5px;
+            border-radius: 3px;
+            background: #f8f8f8;
+            font-size: 9px;
+        }
+        
+        .extraction-methods {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin: 6px 0;
+        }
+        
+        .method-box {
+            border: 1px solid #8B0000;
+            padding: 6px;
+            border-radius: 3px;
+            background: #fff5f5;
+            font-size: 9px;
+        }
+        
+        .bonding-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 6px 0;
+            font-size: 9px;
+        }
+        
+        .bonding-table th {
+            background: #8B0000;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            font-weight: bold;
+            border: 1px solid #8B0000;
+        }
+        
+        .bonding-table td {
+            border: 1px solid #ccc;
+            padding: 5px;
+            vertical-align: top;
+            text-align: left;
+        }
+        
+        .grade7-tip {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 5px;
+            border-radius: 3px;
+            margin: 5px 0;
+            font-size: 9px;
+        }
+        
+        .exam-tip {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            padding: 5px;
+            border-radius: 3px;
+            margin: 5px 0;
+            font-size: 9px;
+        }
+        
+        .calculation-example {
+            background: #e3f2fd;
+            border: 1px solid #bbdefb;
+            padding: 6px;
+            border-radius: 3px;
+            margin: 5px 0;
+            font-size: 9px;
+        }
+        
+        .common-mistake {
+            background: #ffebee;
+            border: 1px solid #ffcdd2;
+            padding: 5px;
+            border-radius: 3px;
+            margin: 5px 0;
+            font-size: 9px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header full-width">
+            <h1>Chemistry Knowledge Organiser</h1>
+            <h2>Year 10 - AQA GCSE Combined Science (Higher Tier)</h2>
+        </div>
+        
+        <div class="section no-break">
+            <h3 class="section-title c6-title">Rates of Reaction</h3>
+            <div class="section-content">
+                <h4>Measuring Rates of Reaction</h4>
+                <div class="equation">
+                    Mean rate = Amount of reactant used ÷ Time<br>
+                    Mean rate = Amount of product formed ÷ Time<br>
+                    Units: g/s, cm³/s, mol/s
+                </div>
+                
+                <div class="calculation-example">
+                    <strong>Worked Example:</strong> If 24 cm³ of CO₂ is produced in 40s:<br>
+                    Rate = 24 ÷ 40 = 0.6 cm³/s
+                </div>
+                
+                <h4>Methods to Measure Rate</h4>
+                <ul>
+                    <li><strong>Gas collection:</strong> Volume of gas produced over time (gas syringe/measuring cylinder)</li>
+                    <li><strong>Mass loss:</strong> Decrease in mass as gas escapes (digital balance)</li>
+                    <li><strong>Precipitation:</strong> Time for solution to become opaque (cross disappears)</li>
+                    <li><strong>Colour change:</strong> Time for colour to appear/disappear (colorimeter)</li>
+                </ul>
+                
+                <h4>Factors Affecting Rate</h4>
+                <div class="factors-grid">
+                    <div class="factor-box">
+                        <strong>Temperature ↑</strong><br>
+                        • Particles move faster<br>
+                        • More frequent collisions<br>
+                        • More particles exceed Ea<br>
+                        • Rate approximately doubles per 10°C rise
+                    </div>
+                    <div class="factor-box">
+                        <strong>Concentration ↑</strong><br>
+                        • More particles per unit volume<br>
+                        • More frequent collisions<br>
+                        • Directly proportional to rate
+                    </div>
+                    <div class="factor-box">
+                        <strong>Surface Area ↑</strong><br>
+                        • More particles exposed<br>
+                        • More collision sites available<br>
+                        • Powder > lumps > large pieces
+                    </div>
+                    <div class="factor-box">
+                        <strong>Catalyst</strong><br>
+                        • Provides alternative pathway<br>
+                        • Lower activation energy<br>
+                        • Same final position, faster rate<br>
+                        • Not used up in reaction
+                    </div>
+                </div>
+                
+                <h4>Collision Theory</h4>
+                <ul>
+                    <li>Particles must <strong>collide</strong> to react</li>
+                    <li>Collisions must have <strong>sufficient energy</strong> (≥ activation energy)</li>
+                    <li>Particles must have correct <strong>orientation</strong></li>
+                    <li><strong>Successful collisions</strong> = collisions that lead to reaction</li>
+                </ul>
+                
+                <div class="grade7-tip">
+                    <strong>Key Understanding:</strong> Explain rate changes using collision theory. Higher temperature increases both frequency AND energy of collisions.
+                </div>
+                
+                <h4>Interpreting Rate Graphs</h4>
+                <ul>
+                    <li><strong>Steeper gradient</strong> = faster rate</li>
+                    <li><strong>Horizontal line</strong> = reaction finished (limiting reactant used up)</li>
+                    <li><strong>Tangent to curve</strong> = instantaneous rate at that time</li>
+                    <li><strong>Same final volume/mass</strong> = same amount of product (same limiting reactant)</li>
+                </ul>
+                
+                <div class="exam-tip">
+                    <strong>Exam Tip:</strong> Always draw tangent lines with a ruler and calculate gradient: Δy/Δx
+                </div>
+            </div>
+        </div>
+        
+        <div class="section no-break">
+            <h3 class="section-title key-terms-title">Key Terms - Rates & Energy</h3>
+            <div class="section-content">
+                <table class="key-terms-table">
+                    <tr>
+                        <th>Key Terms</th>
+                        <th>Definitions</th>
+                    </tr>
+                    <tr>
+                        <td>Rate of Reaction</td>
+                        <td>How fast reactants are used up or products formed (per unit time)</td>
+                    </tr>
+                    <tr>
+                        <td>Activation Energy (Ea)</td>
+                        <td>Minimum energy needed for particles to react successfully</td>
+                    </tr>
+                    <tr>
+                        <td>Catalyst</td>
+                        <td>Substance that speeds up reaction without being used up</td>
+                    </tr>
+                    <tr>
+                        <td>Exothermic</td>
+                        <td>Reaction that transfers energy to surroundings (ΔH negative)</td>
+                    </tr>
+                    <tr>
+                        <td>Endothermic</td>
+                        <td>Reaction that takes in energy from surroundings (ΔH positive)</td>
+                    </tr>
+                    <tr>
+                        <td>Bond Energy</td>
+                        <td>Energy needed to break one mole of bonds (always positive)</td>
+                    </tr>
+                    <tr>
+                        <td>Equilibrium</td>
+                        <td>Forward and reverse reaction rates are equal (dynamic process)</td>
+                    </tr>
+                    <tr>
+                        <td>Le Chatelier's Principle</td>
+                        <td>System responds to oppose changes in conditions</td>
+                    </tr>
+                </table>
+                
+                <div class="common-mistake">
+                    <strong>Common Mistake:</strong> Bond breaking requires energy (endothermic), bond forming releases energy (exothermic)
+                </div>
+            </div>
+        </div>
+        
+        <div class="section no-break">
+            <h3 class="section-title c5-title">Energy Changes</h3>
+            <div class="section-content">
+                <h4>Exothermic vs Endothermic</h4>
+                <ul>
+                    <li><strong>Exothermic:</strong> Energy transferred to surroundings (temperature rises, ΔH negative)</li>
+                    <li><strong>Endothermic:</strong> Energy taken from surroundings (temperature falls, ΔH positive)</li>
+                </ul>
+                
+                <div class="energy-diagram">
+                    <strong>Energy Profile Diagrams</strong><br>
+                    Exothermic: Products lower than reactants (energy released)<br>
+                    Endothermic: Products higher than reactants (energy absorbed)<br>
+                    Peak = Activation Energy (same for both directions without catalyst)
+                </div>
+                
+                <h4>Bond Energy Calculations</h4>
+                <div class="equation">
+                    Energy change = Σ(bonds broken) - Σ(bonds formed)<br>
+                    ΔH = Energy required - Energy released
+                </div>
+                
+                <div class="calculation-example">
+                    <strong>Worked Example:</strong> H₂ + Cl₂ → 2HCl<br>
+                    Bonds broken: H-H (436 kJ/mol) + Cl-Cl (243 kJ/mol) = 679 kJ/mol<br>
+                    Bonds formed: 2 × H-Cl (431 kJ/mol) = 862 kJ/mol<br>
+                    ΔH = 679 - 862 = -183 kJ/mol (Exothermic)
+                </div>
+                
+                <ul>
+                    <li><strong>Negative ΔH</strong> = Exothermic reaction (energy released)</li>
+                    <li><strong>Positive ΔH</strong> = Endothermic reaction (energy absorbed)</li>
+                </ul>
+                
+                <h4>Examples of Energy Changes</h4>
+                <ul>
+                    <li><strong>Exothermic:</strong> Combustion, neutralisation, respiration, oxidation</li>
+                    <li><strong>Endothermic:</strong> Photosynthesis, thermal decomposition, dissolving ammonium salts</li>
+                    <li><strong>Everyday uses:</strong> Hand warmers (iron oxidation), sports injury packs (ammonium nitrate)</li>
+                </ul>
+                
+                <h4>Reaction Profiles & Catalysts</h4>
+                <ul>
+                    <li><strong>Activation energy:</strong> Energy barrier that must be overcome</li>
+                    <li><strong>Catalysts:</strong> Lower activation energy</li>
+                    <li><strong>Higher temperature:</strong> More particles exceed activation energy</li>
+                    <li><strong>Different pathways:</strong> Catalysts provide alternative route with lower Ea</li>
+                </ul>
+                
+                <div class="grade7-tip">
+                    <strong>Key Understanding:</strong> Catalysts speed up rate of reaching equilibrium but don't change the equilibrium position.
+                </div>
+            </div>
+        </div>
+        
+        <div class="section no-break">
+            <h3 class="section-title c7-title">Chemical Equilibria</h3>
+            <div class="section-content">
+                <h4>Reversible Reactions</h4>
+                <ul>
+                    <li>Products can react to reform reactants</li>
+                    <li>Shown with ⇌ symbol</li>
+                    <li>Example: <span class="formula">NH₄Cl(s) ⇌ NH₃(g) + HCl(g)</span></li>
+                    <li><strong>Closed system:</strong> No matter can enter or leave</li>
+                </ul>
+                
+                <h4>Dynamic Equilibrium</h4>
+                <ul>
+                    <li>Rate of forward reaction = Rate of reverse reaction</li>
+                    <li>Concentrations of reactants and products remain constant</li>
+                    <li>Only occurs in <strong>closed system</strong></li>
+                    <li><strong>Dynamic:</strong> Reactions continue but no net change</li>
+                </ul>
+                
+                <h4>Le Chatelier's Principle</h4>
+                <p><strong>If conditions change, equilibrium shifts to oppose the change</strong></p>
+                
+                <h4>Effects of Changing Conditions</h4>
+                <ul>
+                    <li><strong>Concentration ↑:</strong> Equilibrium shifts away from increased substance</li>
+                    <li><strong>Concentration ↓:</strong> Equilibrium shifts towards decreased substance</li>
+                    <li><strong>Temperature ↑:</strong> Equilibrium shifts in endothermic direction</li>
+                    <li><strong>Temperature ↓:</strong> Equilibrium shifts in exothermic direction</li>
+                    <li><strong>Pressure ↑:</strong> Equilibrium shifts to side with fewer gas molecules</li>
+                    <li><strong>Catalyst:</strong> No effect on position, speeds up both reactions equally</li>
+                </ul>
+                
+                <div class="calculation-example">
+                    <strong>Worked Example:</strong> N₂(g) + 3H₂(g) ⇌ 2NH₃(g) ΔH = -92 kJ/mol<br>
+                    • ↑ Pressure: Shifts right (4 moles → 2 moles)<br>
+                    • ↑ Temperature: Shifts left (endothermic direction)<br>
+                    • Remove NH₃: Shifts right to replace NH₃
+                </div>
+                
+                <h4>Industrial Applications - Haber Process</h4>
+                <div class="equation">N₂ + 3H₂ ⇌ 2NH₃ (ΔH = -92 kJ/mol)</div>
+                <ul>
+                    <li><strong>High pressure (200 atm):</strong> Favours NH₃ formation (fewer molecules)</li>
+                    <li><strong>Moderate temperature (450°C):</strong> Compromise between yield and rate</li>
+                    <li><strong>Iron catalyst:</strong> Increases rate to reach equilibrium faster</li>
+                    <li><strong>NH₃ removed:</strong> Shifts equilibrium right, converted to fertilizer</li>
+                </ul>
+                
+                <div class="exam-tip">
+                    <strong>Exam Tip:</strong> Always count gas molecules on each side to predict pressure effects.
+                </div>
+            </div>
+        </div>
+        
+        <div class="section no-break">
+            <h3 class="section-title c2-title">Structure and Bonding</h3>
+            <div class="section-content">
+                <table class="bonding-table">
+                    <tr>
+                        <th>Bond Type</th>
+                        <th>Formation</th>
+                        <th>Properties</th>
+                        <th>Examples</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Ionic</strong></td>
+                        <td>Metal transfers electrons to non-metal. Electrostatic attraction between oppositely charged ions.</td>
+                        <td>High m.p./b.p., conduct when molten/dissolved, brittle, soluble in water</td>
+                        <td>NaCl, MgO, CaF₂</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Covalent</strong></td>
+                        <td>Non-metals share pairs of electrons. Strong bonds within molecules, weak forces between.</td>
+                        <td>Low m.p./b.p., don't conduct electricity (except for graphite, graphene and fullerenes), often gases/liquids at room temperature</td>
+                        <td>H₂O, CO₂, CH₄</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Metallic</strong></td>
+                        <td>Positive metal ions in 'sea' of delocalised electrons.</td>
+                        <td>Good conductors, malleable, ductile, high m.p., lustrous</td>
+                        <td>Fe, Cu, Al</td>
+                    </tr>
+                </table>
+                
+                <h4>Giant Structures</h4>
+                <ul>
+                    <li><strong>Giant Ionic lattice:</strong> Strong electrostatic force of attraction between oppositely charged ions</li>
+                    <li><strong>Giant Metallic lattice:</strong> Strong electrostatic force of attraction between positively charged metal ion and sea of delocalised electrons</li>
+                    <li><strong>Giant Covalent lattice:</strong> Many strong covalent bonds</li>
+                </ul>
+                
+                <h4>Examples of Giant Covalent Lattices</h4>
+                <ul>
+                    <li><strong>Diamond:</strong> Each C is covalently bonded to 4 others, very hard and doesn't conduct</li>
+                    <li><strong>Graphite:</strong> Layers of carbons arranged in hexagons, soft as layers can slide and can conduct electricity</li>
+                    <li><strong>Graphene:</strong> Single layer of graphite</li>
+                    <li><strong>Silicon dioxide (silica):</strong> Each Si is covalently bonded to 4 oxygen atoms, very hard</li>
+                </ul>
+                
+                <h4>Carbon Allotropes</h4>
+                <ul>
+                    <li><strong>Allotropes:</strong> Different arrangements of the same element</li>
+                    <li><strong>Examples:</strong> Graphite, graphene, diamond and fullerenes are allotropes of carbon</li>
+                    <li><strong>Different arrangements</strong> of same element give different properties</li>
+                </ul>
+                
+                <div class="grade7-tip">
+                    <strong>Key Understanding:</strong> Structure determines properties. Delocalised electrons in graphite and metals allow electrical conduction.
+                </div>
+                
+                <h4>Nanoparticles</h4>
+                <ul>
+                    <li><strong>Size:</strong> 1-100 nanometers (1 nm = 1 × 10⁻⁹ m)</li>
+                    <li><strong>High surface area to volume ratio</strong> = more reactive</li>
+                    <li><strong>Applications:</strong> Drug delivery, catalysts, sunscreens, electronics</li>
+                </ul>
+                
+                <h4>Intermolecular Forces</h4>
+                <ul>
+                    <li>Weak forces between molecules (not within molecules)</li>
+                    <li>Stronger in larger molecules (more electrons)</li>
+                    <li>Affect boiling/melting points, solubility</li>
+                    <li>Much weaker than covalent, ionic, or metallic bonds</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section no-break">
+            <h3 class="section-title c4-title">Chemical Changes (Metals)</h3>
+            <div class="section-content">
+                <h4>Reactivity Series</h4>
+                <div class="reactivity-series">
+                    <strong>MOST REACTIVE ↑</strong><br>
+                    Potassium (K) - violent reaction with water<br>
+                    Sodium (Na) - reacts vigorously with water<br>
+                    Lithium (Li) - reacts with water<br>
+                    Calcium (Ca) - reacts with water<br>
+                    Magnesium (Mg) - reacts with steam<br>
+                    Aluminium (Al) - protected by oxide layer<br>
+                    <strong>(Carbon) - reference point</strong><br>
+                    Zinc (Zn) - reacts with acids<br>
+                    Iron (Fe) - rusts slowly<br>
+                    <strong>(Hydrogen) - reference point</strong><br>
+                    Copper (Cu) - no reaction with acids<br>
+                    Silver (Ag) - very unreactive<br>
+                    Gold (Au) - noble metal<br>
+                    <strong>LEAST REACTIVE ↓</strong>
+                </div>
+                
+                <h4>Displacement Reactions</h4>
+                <ul>
+                    <li><strong>More reactive metal displaces less reactive metal from compound</strong></li>
+                    <li>Example: <span class="formula">Zn + CuSO₄ → ZnSO₄ + Cu</span></li>
+                    <li>No reaction if less reactive metal added to more reactive metal compound</li>
+                    <li><strong>Thermite reaction:</strong> <span class="formula">Al + Fe₂O₃ → Al₂O₃ + Fe</span></li>
+                </ul>
+                
+                <div class="calculation-example">
+                    <strong>Worked Example:</strong> Will magnesium displace copper from copper sulfate?<br>
+                    Mg is above Cu in reactivity series → YES, reaction occurs
+                </div>
+                
+                <h4>Extraction of Metals</h4>
+                <div class="extraction-methods">
+                    <div class="method-box">
+                        <strong>Reduction with Carbon</strong><br>
+                        • Metals below carbon in series<br>
+                        • Heat metal oxide with carbon<br>
+                        • Example: <span class="formula">2Fe₂O₃ + 3C → 4Fe + 3CO₂</span><br>
+                        • Cheaper method
+                    </div>
+                    <div class="method-box">
+                        <strong>Thermal Decomposition</strong><br>
+                        • Metals below carbon in series<br>
+                        • Heat breaks down metal compounds<br>
+                        • Used for less reactive metals<br>
+                        • Lower energy requirements
+                    </div>
+                </div>
+                
+                <h4>Oxidation and Reduction (Redox)</h4>
+                <ul>
+                    <li><strong>Oxidation:</strong> Loss of electrons (OIL) or gain of oxygen</li>
+                    <li><strong>Reduction:</strong> Gain of electrons (RIG) or loss of oxygen</li>
+                    <li><strong>Redox reaction:</strong> Both oxidation and reduction occur simultaneously</li>
+                </ul>
+                
+                <div class="calculation-example">
+                    <strong>Worked Example:</strong> Zn + CuSO₄ → ZnSO₄ + Cu<br>
+                    Zn → Zn²⁺ + 2e⁻ (oxidation - Zn loses electrons)<br>
+                    Cu²⁺ + 2e⁻ → Cu (reduction - Cu²⁺ gains electrons)
+                </div>
+                
+                <h4>Metal Corrosion</h4>
+                <ul>
+                    <li><strong>Rusting:</strong> Iron + oxygen + water → hydrated iron(III) oxide</li>
+                    <li><strong>Prevention:</strong> Barriers (paint, oil), galvanising (zinc coating), sacrificial protection</li>
+                    <li><strong>Galvanising:</strong> Zinc more reactive than iron, gets oxidised preferentially</li>
+                </ul>
+                
+                <h4>Why are alloys stronger than a pure metal?</h4>
+                <ul>
+                    <li><strong>Alloys:</strong> Different sized atoms disrupt the regular structure</li>
+                    <li><strong>Result:</strong> Layers cannot slide over each other as easily, making alloys harder</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section full-width no-break page-break">
+            <h3 class="section-title calculations-title">Advanced Calculations & Higher Tier Skills</h3>
+            <div class="section-content">
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+                    <div>
+                        <h4>Rate Calculations</h4>
+                        <div class="equation">Rate = Δ(amount) ÷ Δ(time)</div>
+                        <div class="equation">Gradient = Δy ÷ Δx</div>
+                        
+                        <div class="calculation-example">
+                            <strong>Worked Example:</strong><br>
+                            At 2 min: 16 cm³ gas produced<br>
+                            At 5 min: 34 cm³ gas produced<br>
+                            Mean rate = (34-16)÷(5-2) = 6 cm³/min
+                        </div>
+                        
+                        <h4>Bond Energy Calculations</h4>
+                        <div class="equation">ΔH = Σ(bonds broken) - Σ(bonds formed)</div>
+                        
+                        <div class="calculation-example">
+                            <strong>Method:</strong><br>
+                            1. Draw out structural formulae<br>
+                            2. Count bonds broken (reactants)<br>
+                            3. Count bonds formed (products)<br>
+                            4. Calculate energy change
+                        </div>
+                        
+                        <div class="common-mistake">
+                            <strong>Common Error:</strong> Forgetting to multiply by number of bonds (e.g., 2 × O-H bonds in H₂O)
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4>Equilibrium Predictions</h4>
+                        <div class="grade7-tip">
+                            <strong>Step-by-step method:</strong><br>
+                            1. Identify the change<br>
+                            2. Determine which direction opposes it<br>
+                            3. State effect on equilibrium position<br>
+                            4. Explain effect on yield/rate
+                        </div>
+                        
+                        <div class="calculation-example">
+                            <strong>Industrial Example:</strong><br>
+                            Contact Process: 2SO₂ + O₂ ⇌ 2SO₃<br>
+                            ΔH = -196 kJ/mol<br>
+                            • High pressure: favours SO₃ (3→2 moles)<br>
+                            • Moderate temp: compromise yield vs rate<br>
+                            • V₂O₅ catalyst: increases rate only
+                        </div>
+                        
+                        <h4>Extraction Methods</h4>
+                        <div class="equation">Metal oxide + C → Metal + CO/CO₂</div>
+                        
+                        <ul style="font-size: 9px;">
+                            <li><strong>Above carbon:</strong> Too reactive for carbon reduction</li>
+                            <li><strong>Below carbon:</strong> Reduction with carbon</li>
+                            <li><strong>Cost factors:</strong> Energy, raw materials, environmental</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4>Structure-Property Links</h4>
+                        <ul style="font-size: 9px;">
+                            <li><strong>Conductivity:</strong> Freely moving electrons / ions to carry charge</li>
+                            <li><strong>Melting / Boiling point:</strong> Mention the structure followed by strong electrostatic forces between OR weak intermolecular forces between molecules. ALWAYS end with therefore a small / large amount of energy is needed to overcome</li>
+                        </ul>
+                        
+                        <div class="exam-tip">
+                            <strong>Advanced Skills:</strong><br>
+                            • Explain observations using scientific theories<br>
+                            • Make predictions based on patterns<br>
+                            • Evaluate industrial processes<br>
+                            • Calculate using mathematical relationships
+                        </div>
+                        
+                        <h4>Command Words</h4>
+                        <ul style="font-size: 9px;">
+                            <li><strong>Explain:</strong> Give reasons using scientific knowledge</li>
+                            <li><strong>Evaluate:</strong> Judge pros/cons, make conclusion</li>
+                            <li><strong>Compare:</strong> Identify similarities and differences</li>
+                            <li><strong>Suggest:</strong> Apply knowledge to new situation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 10px; padding: 8px; background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 3px;">
+                    <strong>Higher Tier Success Criteria:</strong> Can explain observations using collision theory and bonding models • Makes accurate predictions using reactivity series and Le Chatelier's principle • Calculates rates and energy changes correctly • Links structure to properties effectively • Evaluates industrial processes considering multiple factors
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
